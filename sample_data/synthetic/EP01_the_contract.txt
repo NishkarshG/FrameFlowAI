@@ -1,0 +1,57 @@
+# ==========================================================================
+# SYNTHETIC SAMPLE SCREENPLAY — FICTIONAL DEMO DATA, NOT REAL PRODUCTION DATA
+# Written for FrameFlow AI testing. Characters, plot and timings are invented.
+# It deliberately contains long lines, overlaps, missing and invalid timestamps.
+# ==========================================================================
+TITLE: Midnight Contract (synthetic demo series)
+EPISODE: 1 — The Contract
+
+INT. PENTHOUSE OFFICE - NIGHT
+
+Rain streaks the floor-to-ceiling windows. MAYA (27), soaked, clutches a folder.
+
+[00:00:01,000 --> 00:00:02,600] MAYA: Who are you?
+
+[00:00:02,800 --> 00:00:05,200] ADRIAN (without turning): The man who owns your debt.
+
+[00:00:05,400 --> 00:00:13,000]
+ADRIAN
+(turning slowly)
+Your father borrowed four million dollars from my family eleven years ago, and he signed a contract promising that if he ever failed to pay, his only daughter would marry the eldest Cole son.
+
+[00:00:13,200 --> 00:00:14,400] MAYA: That's insane.
+
+[00:00:14,500 --> 00:00:16,000] MAYA: No.
+
+# Overlap example: Adrian starts before Maya's previous line ends.
+[00:00:15,400 --> 00:00:19,000] ADRIAN: You have until midnight to sign. After that, the hospital stops your mother's treatment.
+
+[00:00:19,200 --> 00:00:21,000]
+MAYA
+(trembling)
+You're a monster.
+
+# Missing timestamp example: editor must enter timing manually.
+ADRIAN: Monsters don't give second chances.
+
+[00:00:24,000 --> 00:00:25,100] MAYA: Why me?
+
+[00:00:25,300 --> 00:00:31,000] ADRIAN: Because the only person in this city who can stand between my grandfather and the board's unprecedented, catastrophically ill-advised acquisition is a wife he cannot intimidate.
+
+[00:00:31,200 --> 00:00:32,000] MAYA: And if I refuse?
+
+# Very fast reading speed example: lots of words in a very short window.
+[00:00:32,100 --> 00:00:33,600] ADRIAN: Then tomorrow morning every newspaper learns your father forged the signatures.
+
+EXT. PENTHOUSE TERRACE - CONTINUOUS
+
+[00:00:34,000 --> 00:00:35,000] LILY (O.S.): Adrian!
+
+[00:00:35,200 --> 00:00:39,800] LILY: You promised me you would never bring her here. You promised me, Adrian.
+
+# Empty dialogue segment example (an editor left the line blank).
+[00:00:40,000 --> 00:00:41,000] MAYA:
+
+[00:00:41,500 --> 00:00:43,500] ADRIAN: Sign it, Maya.
+
+CUT TO:

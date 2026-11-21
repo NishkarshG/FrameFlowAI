@@ -1,0 +1,38 @@
+{
+  "id": "adcbc8b09980",
+  "episode_id": "3fe6d06acbaf",
+  "kind": "optimize",
+  "model": "openrouter/free",
+  "status": "success",
+  "error": null,
+  "request": [
+    {
+      "role": "system",
+      "content": "You are a senior subtitle editor for short-form vertical microdramas watched on phones. You shorten subtitle text so it can be read quickly, while: (1) preserving the original meaning, (2) preserving the emotional tone and the character's voice, (3) NEVER changing or removing plot information such as names, numbers, places, relationships, threats, promises, secrets or negations. Do not add new information. Keep the same language as the original. Reply with ONLY a JSON object, no commentary."
+    },
+    {
+      "role": "user",
+      "content": "{\n \"task\": \"Suggest a shorter alternative for each subtitle.\",\n \"constraints\": {\n  \"target_max_characters\": 84,\n  \"target_reading_speed_cps\": 17.0,\n  \"keep_meaning\": true,\n  \"keep_emotional_tone\": true,\n  \"keep_plot_information\": true\n },\n \"subtitles\": [\n  {\n   \"id\": \"15aeb5ba42\",\n   \"character\": \"ADRIAN\",\n   \"text\": \"Your father borrowed four million dollars from my family eleven years ago,\",\n   \"delivery\": \"turning slowly\",\n   \"seconds_on_screen\": 2.98,\n   \"max_characters_for_this_duration\": 50,\n   \"previous_subtitle\": \"The man who owns your debt.\",\n   \"next_subtitle\": \"and he signed a contract promising that if he ever failed to pay,\"\n  }\n ],\n \"response_format\": {\n  \"suggestions\": [\n   {\n    \"id\": \"<same id as input>\",\n    \"suggestion\": \"<shorter subtitle text>\",\n    \"rationale\": \"<one short sentence>\",\n    \"preserved_details\": [\n     \"<key plot details kept>\"\n    ]\n   }\n  ]\n }\n}"
+    }
+  ],
+  "raw_output": "{\n \"suggestions\": [\n  {\n   \"id\": \"15aeb5ba42\",\n   \"suggestion\": \"Father borrowed 4 million from family 11 years ago\",\n   \"rationale\": \"Condensed to fit 2.98s duration at 17 cps while retaining core plot of borrowing and timeframe.\",\n   \"preserved_details\": [\n    \"father borrowed\",\n    \"amount: 4 million\",\n    \"timeframe: 11 years ago\",\n    \"lender: family\"\n   ]\n  }\n ]\n}",
+  "parsed": {
+    "validated": {
+      "suggestions": [
+        {
+          "id": "15aeb5ba42",
+          "suggestion": "Father borrowed 4 million from family 11 years ago",
+          "rationale": "Condensed to fit 2.98s duration at 17 cps while retaining core plot of borrowing and timeframe.",
+          "preserved_details": [
+            "father borrowed",
+            "amount: 4 million",
+            "timeframe: 11 years ago",
+            "lender: family"
+          ]
+        }
+      ]
+    },
+    "rejected": []
+  },
+  "created_at": "2026-11-20T20:46:04+00:00"
+}

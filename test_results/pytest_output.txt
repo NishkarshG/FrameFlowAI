@@ -1,0 +1,76 @@
+# FrameFlow AI — actual test run
+# Date: 2026-11-20T20:23Z  Python 3.13.18  pydantic 2.13.5
+# Environment note: fastapi/httpx were not installable in the build sandbox, so tests/test_api.py was SKIPPED here.
+# It runs automatically once you 'pip install -r requirements.txt'.
+
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/frameflow-ai/backend
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 60 items / 1 skipped
+
+tests/test_ai.py::test_missing_api_key_raises_unavailable PASSED         [  1%]
+tests/test_ai.py::test_network_failure_raises_unavailable PASSED         [  3%]
+tests/test_ai.py::test_timeout_raises_unavailable PASSED                 [  5%]
+tests/test_ai.py::test_http_errors_are_reported_with_hints[401-valid] PASSED [  6%]
+tests/test_ai.py::test_http_errors_are_reported_with_hints[404-model id] PASSED [  8%]
+tests/test_ai.py::test_http_errors_are_reported_with_hints[429-Rate limited] PASSED [ 10%]
+tests/test_ai.py::test_request_uses_backend_key_and_model PASSED         [ 11%]
+tests/test_ai.py::test_optimize_valid_reply_is_validated_and_guarded PASSED [ 13%]
+tests/test_ai.py::test_optimize_invalid_json_raises_invalid_output PASSED [ 15%]
+tests/test_ai.py::test_optimize_schema_violation_raises PASSED           [ 16%]
+tests/test_ai.py::test_guard_detects_dropped_negation_and_names PASSED   [ 18%]
+tests/test_ai.py::test_critical_details PASSED                           [ 20%]
+tests/test_ai.py::test_extract_json_handles_prose_and_fences PASSED      [ 21%]
+tests/test_ai.py::test_ai_segment_accepts_exact_word_split PASSED        [ 23%]
+tests/test_ai.py::test_ai_segment_rejects_reworded_split PASSED          [ 25%]
+tests/test_processing.py::test_parse_timestamp[00:00:01,000-1000] PASSED [ 26%]
+tests/test_processing.py::test_parse_timestamp[00:00:01.5-1500] PASSED   [ 28%]
+tests/test_processing.py::test_parse_timestamp[01:02:03,004-3723004] PASSED [ 30%]
+tests/test_processing.py::test_parse_timestamp[02:05-125000] PASSED      [ 31%]
+tests/test_processing.py::test_parse_timestamp[0:00:00,07-70] PASSED     [ 33%]
+tests/test_processing.py::test_placeholders_mean_missing[] PASSED        [ 35%]
+tests/test_processing.py::test_placeholders_mean_missing[??:??] PASSED   [ 36%]
+tests/test_processing.py::test_placeholders_mean_missing[TBD] PASSED     [ 38%]
+tests/test_processing.py::test_placeholders_mean_missing[--:--] PASSED   [ 40%]
+tests/test_processing.py::test_bad_timestamps_raise[1:2] PASSED          [ 41%]
+tests/test_processing.py::test_bad_timestamps_raise[00:61:00] PASSED     [ 43%]
+tests/test_processing.py::test_bad_timestamps_raise[abc] PASSED          [ 45%]
+tests/test_processing.py::test_bad_timestamps_raise[00:00:99] PASSED     [ 46%]
+tests/test_processing.py::test_format_timestamp_roundtrip PASSED         [ 48%]
+tests/test_processing.py::test_sample_episode_1_extraction PASSED        [ 50%]
+tests/test_processing.py::test_character_identification PASSED           [ 51%]
+tests/test_processing.py::test_missing_invalid_and_partial_timing_flagged PASSED [ 53%]
+tests/test_processing.py::test_multiple_episodes_in_one_file PASSED      [ 55%]
+tests/test_processing.py::test_scene_headings_and_actions_not_dialogue PASSED [ 56%]
+tests/test_processing.py::test_no_timestamps_are_invented PASSED         [ 58%]
+tests/test_processing.py::test_chunk_text_respects_limit_and_preserves_words PASSED [ 60%]
+tests/test_processing.py::test_split_divides_original_window_proportionally PASSED [ 61%]
+tests/test_processing.py::test_short_line_keeps_original_timing PASSED   [ 63%]
+tests/test_processing.py::test_wrap_text_balances_two_lines PASSED       [ 65%]
+tests/test_processing.py::test_reading_speed_calculation PASSED          [ 66%]
+tests/test_processing.py::test_overlap_detection PASSED                  [ 68%]
+tests/test_processing.py::test_duration_empty_missing_invalid_and_long_checks PASSED [ 70%]
+tests/test_processing.py::test_thresholds_are_configurable PASSED        [ 71%]
+tests/test_processing.py::test_difficult_language_flagged_as_info PASSED [ 73%]
+tests/test_processing.py::test_generate_srt_format_and_skips_untimed PASSED [ 75%]
+tests/test_processing.py::test_generate_csv_has_row_per_segment PASSED   [ 76%]
+tests/test_service.py::test_txt_upload_decoding PASSED                   [ 78%]
+tests/test_service.py::test_upload_without_dialogue_is_rejected PASSED   [ 80%]
+tests/test_service.py::test_sample_project_is_labelled_synthetic PASSED  [ 81%]
+tests/test_service.py::test_real_upload_is_not_marked_synthetic PASSED   [ 83%]
+tests/test_service.py::test_multiple_files_create_multiple_episodes PASSED [ 85%]
+tests/test_service.py::test_manual_timing_fixes_missing_issue PASSED     [ 86%]
+tests/test_service.py::test_text_edit_and_bad_timestamp PASSED           [ 88%]
+tests/test_service.py::test_ai_failure_keeps_deterministic_results_and_logs_run PASSED [ 90%]
+tests/test_service.py::test_ai_failure_without_key PASSED                [ 91%]
+tests/test_service.py::test_optimize_accept_reject_flow PASSED           [ 93%]
+tests/test_service.py::test_ai_segment_replaces_only_verified_lines PASSED [ 95%]
+tests/test_service.py::test_exports PASSED                               [ 96%]
+tests/test_service.py::test_dashboard_reflects_real_data PASSED          [ 98%]
+tests/test_service.py::test_settings_threshold_change_affects_checks PASSED [100%]
+
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_api.py:6: could not import 'fastapi': No module named 'fastapi'
+======================== 60 passed, 1 skipped in 0.26s =========================

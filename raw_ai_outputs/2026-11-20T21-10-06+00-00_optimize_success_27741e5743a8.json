@@ -1,0 +1,36 @@
+{
+  "id": "27741e5743a8",
+  "episode_id": "510ac58f1228",
+  "kind": "optimize",
+  "model": "openrouter/free",
+  "status": "success",
+  "error": null,
+  "request": [
+    {
+      "role": "system",
+      "content": "You are a senior subtitle editor for short-form vertical microdramas watched on phones. You shorten subtitle text so it can be read quickly, while: (1) preserving the original meaning, (2) preserving the emotional tone and the character's voice, (3) NEVER changing or removing plot information such as names, numbers, places, relationships, threats, promises, secrets or negations. Do not add new information. Keep the same language as the original. Reply with ONLY a JSON object, no commentary."
+    },
+    {
+      "role": "user",
+      "content": "{\n \"task\": \"Suggest a shorter alternative for each subtitle.\",\n \"constraints\": {\n  \"target_max_characters\": 84,\n  \"target_reading_speed_cps\": 17.0,\n  \"keep_meaning\": true,\n  \"keep_emotional_tone\": true,\n  \"keep_plot_information\": true\n },\n \"subtitles\": [\n  {\n   \"id\": \"688918e027\",\n   \"character\": \"MATRIARCH\",\n   \"text\": \"You should turn around, Juliana.\",\n   \"delivery\": \"Cold, Commanding\",\n   \"seconds_on_screen\": 1.8,\n   \"max_characters_for_this_duration\": 30,\n   \"previous_subtitle\": null,\n   \"next_subtitle\": \"Why?\"\n  }\n ],\n \"response_format\": {\n  \"suggestions\": [\n   {\n    \"id\": \"<same id as input>\",\n    \"suggestion\": \"<shorter subtitle text>\",\n    \"rationale\": \"<one short sentence>\",\n    \"preserved_details\": [\n     \"<key plot details kept>\"\n    ]\n   }\n  ]\n }\n}"
+    }
+  ],
+  "raw_output": "{\n  \"suggestions\": [\n    {\n      \"id\": \"688918e027\",\n      \"suggestion\": \"Turn around, Juliana.\",\n      \"rationale\": \"Keeps command and name while staying under character limit.\",\n      \"preserved_details\": [\n        \"Juliana\",\n        \"turn around\"\n      ]\n    }\n  ]\n}",
+  "parsed": {
+    "validated": {
+      "suggestions": [
+        {
+          "id": "688918e027",
+          "suggestion": "Turn around, Juliana.",
+          "rationale": "Keeps command and name while staying under character limit.",
+          "preserved_details": [
+            "Juliana",
+            "turn around"
+          ]
+        }
+      ]
+    },
+    "rejected": []
+  },
+  "created_at": "2026-11-20T21:10:06+00:00"
+}

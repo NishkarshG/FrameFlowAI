@@ -1,0 +1,17 @@
+{
+  "id": "45ac0ddeea7b",
+  "episode_id": "677673290b92",
+  "kind": "segment",
+  "model": "openrouter/free",
+  "status": "failed",
+  "error": "OPENROUTER_API_KEY is not set on the backend. Add it to backend/.env and restart the server. Deterministic readability checks still work.",
+  "request": {
+    "line_indexes": [
+      2,
+      12
+    ]
+  },
+  "raw_output": null,
+  "parsed": null,
+  "created_at": "2026-11-20T20:12:03+00:00"
+}

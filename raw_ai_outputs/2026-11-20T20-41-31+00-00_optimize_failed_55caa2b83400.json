@@ -1,0 +1,16 @@
+{
+  "id": "55caa2b83400",
+  "episode_id": "3fe6d06acbaf",
+  "kind": "optimize",
+  "model": "openrouter/free",
+  "status": "failed",
+  "error": "OpenRouter returned HTTP 401: Missing Authentication header. Check that OPENROUTER_API_KEY is valid.",
+  "request": {
+    "segment_ids": [
+      "15aeb5ba42"
+    ]
+  },
+  "raw_output": "{\"error\":{\"message\":\"Missing Authentication header\",\"code\":401}}",
+  "parsed": null,
+  "created_at": "2026-11-20T20:41:31+00:00"
+}

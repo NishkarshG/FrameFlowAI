@@ -1,0 +1,59 @@
+# ==========================================================================
+# SYNTHETIC SAMPLE SCREENPLAY — FICTIONAL DEMO DATA, NOT REAL PRODUCTION DATA
+# Written for FrameFlow AI testing. Characters, plot and timings are invented.
+# Mixed format: block cues, bare timestamps, placeholders and an invalid range.
+# ==========================================================================
+TITLE: Midnight Contract (synthetic demo series)
+EPISODE: 2 — The Wedding
+
+INT. COLE ESTATE - BRIDAL SUITE - DAY
+
+Maya stares at herself in a mirror, wearing a dress she didn't choose.
+
+[00:00:00,500 --> 00:00:02,000]
+GRANDMA COLE
+Turn around, child.
+
+[00:00:02,300 --> 00:00:04,000]
+MAYA
+Is this what you wanted?
+
+[00:00:04,200 --> 00:00:12,500]
+GRANDMA COLE
+(sitting, slowly)
+What I wanted was for my grandson to marry for love, but love has never protected this family from the vultures on the board, so a contract will have to do, and you will smile for the cameras.
+
+# Bare timestamp range without brackets.
+00:00:12,800 --> 00:00:14,000 MAYA: I'll smile.
+
+00:00:14,100 --> 00:00:15,600 MAYA: But I won't lie.
+
+# Placeholder timestamp: timing still to be spotted by the editor.
+[??:??:?? --> ??:??:??] GRANDMA COLE: Then you're braver than he is.
+
+INT. COLE ESTATE - CHAPEL - DAY
+
+[00:00:20,000 --> 00:00:22,000] OFFICIANT: Do you, Adrian Cole, take this woman?
+
+# Invalid timing: end time is before start time.
+[00:00:22,500 --> 00:00:21,900] ADRIAN: I do.
+
+[00:00:23,000 --> 00:00:24,000] OFFICIANT: And do you, Maya Lin—
+
+[00:00:23,700 --> 00:00:26,500] LILY (O.S.): Stop the wedding! She's lying about the baby!
+
+[00:00:27,000 --> 00:00:28,200] MAYA: What baby?
+
+# Start time only, end time not yet known.
+[00:00:28,500 -->] ADRIAN: Lily, get out.
+
+[00:00:31,000 --> 00:00:38,500]
+LILY
+(holding up an envelope)
+This hospital record proves she was admitted to Saint Agnes three weeks before you ever met her, and the doctor's notes are notarised, irrefutable and absolutely devastating for your inheritance.
+
+[00:00:38,700 --> 00:00:39,500] ADRIAN: Give me that.
+
+[00:00:39,600 --> 00:00:41,000] MAYA: Adrian, I can explain.
+
+FADE OUT.
