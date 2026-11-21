@@ -1,11 +1,33 @@
-# FrameFlow AI — Microdrama Subtitle & Dialogue Optimizer
+# 🎬 FrameFlow AI — Microdrama Subtitle & Dialogue Optimizer
 
-FrameFlow AI helps screenplay editors turn TXT screenplays into readable subtitles for short-form vertical dramas.
-It pulls out the timestamped dialogue, splits it into subtitle cards, checks readability with deterministic rules,
-suggests shorter lines through OpenRouter, and exports SRT, CSV and JSON files.
+> Turn TXT screenplays into readable, correctly timed subtitles for short-form vertical dramas.
+
+FrameFlow AI pulls out the timestamped dialogue, splits it into subtitle cards, checks readability with deterministic
+rules, suggests shorter lines with AI (OpenRouter), and exports **SRT**, **CSV** and **JSON** files.
 
 **Stack:** React 18 + TypeScript + Tailwind CSS v4 + Lucide icons (Vite) · Python FastAPI + Pydantic v2 · SQLite · OpenRouter.
-Runs fine on an 8 GB laptop and needs no GPU.
+Runs on an 8 GB laptop and needs no GPU.
+
+## ✨ Highlights
+
+- 📄 **Upload** one or many `.txt` screenplays (several formats supported, including `**CHARACTER (emotion):**` production scripts)
+- ⏱️ **Never invents timestamps**: missing timing is flagged for manual input
+- 📏 **Readability checks**: characters per line, reading speed (CPS), duration, overlaps, empty lines, difficult words
+- 🤖 **AI rewriting** that keeps meaning, emotion and plot, with side-by-side Accept / Reject
+- 🎞️ **Timeline preview** with a phone-screen subtitle preview
+- 📦 **Exports**: SRT · CSV report · JSON analysis (including raw AI outputs) · project ZIP
+
+## 📸 Screenshots
+
+### Dashboard
+Live totals, processing activity and issue breakdown, all computed from processed screenplays.
+
+![FrameFlow AI dashboard](docs/screenshots/dashboard.png)
+
+### Export Centre
+Download SRT, CSV or JSON per episode, or the whole project as a ZIP, with a live SRT preview.
+
+![FrameFlow AI export centre](docs/screenshots/export-centre.png)
 
 ---
 
@@ -16,7 +38,7 @@ You need **Python 3.10+** and **Node.js 18+**.
 ### Backend (terminal 1)
 
 ```bash
-cd frameflow-ai/backend
+cd backend
 python -m venv .venv
 # macOS/Linux:
 source .venv/bin/activate
@@ -30,10 +52,12 @@ uvicorn app.main:app --reload --port 8000
 
 API docs: http://localhost:8000/docs
 
+> **Windows `WinError 10013`?** Port 8000 is reserved on some PCs. Use `--port 8010` and change the proxy target in `frontend/vite.config.ts` to `http://127.0.0.1:8010`.
+
 ### Frontend (terminal 2)
 
 ```bash
-cd frameflow-ai/frontend
+cd frontend
 npm install
 npm run dev
 ```
@@ -43,7 +67,7 @@ Open **http://localhost:5173**. Vite forwards `/api` requests to the backend on 
 ### Run the tests
 
 ```bash
-cd frameflow-ai/backend
+cd backend
 pytest -v
 ```
 
@@ -100,6 +124,24 @@ LILY: No timestamp at all = missing timing.
 - Scene headings, action lines, transitions (`CUT TO:`) and `#` comments are not treated as dialogue.
 - A file containing the word **SYNTHETIC** in its header is flagged as synthetic data.
 
+**Structured production-script format** is also supported:
+
+```text
+EPISODE NUMBER: Episode 1
+EPISODE LOGLINE: ...            (ignored)
+--- SCRIPT START ---
+SCENE 01
+Scene heading: INT. CATHEDRAL – DAY
+
+**CAMERA:**                     (ignored, as are ACTION and SOUND FX)
+Start: (00:00.00) | End: (00:04.80)
+Wide shot...
+
+**MATRIARCH (Cold, Commanding):**
+Start: (00:11.30) | End: (00:13.10)
+"You should turn around, Juliana."
+```
+
 ---
 
 ## 4. How processing works (`backend/app/`)
@@ -150,7 +192,7 @@ To capture real model outputs, run `python scripts/capture_raw_ai_outputs.py` fr
 
 ## 5. Tests and results
 
-`backend/tests/` — 61 tests:
+`backend/tests/` — 62 tests:
 
 | Requirement | Tests |
 |---|---|
@@ -196,6 +238,7 @@ frameflow-ai/
 │   ├── package.json · vite.config.ts · tsconfig.json · index.html
 │   └── src/            App.tsx · api.ts · types.ts · utils.ts · context.ts · components/ · pages/
 ├── sample_data/synthetic/   EP01_the_contract.txt · EP02_the_wedding.txt   (SYNTHETIC — fictional)
+├── docs/screenshots/        README images
 ├── raw_ai_outputs/          verbatim AI call records
 └── test_results/            pytest_output.txt · sample SRT export
 ```
