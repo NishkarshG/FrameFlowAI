@@ -3,6 +3,13 @@
   command = "npm install && npx vite build"
   publish = "dist"
 
+# No backend on Netlify: make API calls fail cleanly instead of returning index.html
+[[redirects]]
+  from = "/api/*"
+  to = "/404.json"
+  status = 404
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
